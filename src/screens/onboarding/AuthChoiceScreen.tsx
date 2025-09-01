@@ -3,7 +3,7 @@
  * Giriş/Kayıt seçenekleri ekranı
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -19,21 +19,39 @@ import { COLORS } from '../../constants/colors';
 import { TYPOGRAPHY } from '../../constants/typography';
 import { SPACING } from '../../constants/spacing';
 import { Button } from '../../components/ui/Button';
+import { LoginMethodModal } from '../auth/LoginMethodScreen';
 
 const { height } = Dimensions.get('window');
 
 // Auth Choice Screen Bileşeni
 export const AuthChoiceScreen: React.FC = () => {
+    const [showLoginModal, setShowLoginModal] = useState(false);
     const handleLogin = () => {
-        // Giriş sayfasına yönlendir
-        console.log('Giriş yap');
-        // router.push('/(auth)/login'); // Henüz login sayfası yok
+        // Modal'i aç
+        setShowLoginModal(true);
     };
 
     const handleRegister = () => {
         // Kayıt sayfasına yönlendir
         console.log('Kayıt ol');
         router.push('/(onboarding)/register-email');
+
+    };
+
+    const handleCloseModal = () => {
+        setShowLoginModal(false);
+    };
+
+    const handlePhoneLogin = () => {
+        setShowLoginModal(false);
+        router.push('/(auth)/phone');
+    };
+
+    const handleEmailLogin = () => {
+        setShowLoginModal(false);
+        console.log('Email ile giriş yapılacak');
+        // Gelecekte email giriş sayfası oluşturulabilir
+
     };
 
     const handleAppleLogin = () => {
@@ -88,6 +106,14 @@ export const AuthChoiceScreen: React.FC = () => {
                     </View>
                 </View>
             </View>
+
+            {/* Login Method Modal */}
+            <LoginMethodModal
+                visible={showLoginModal}
+                onClose={handleCloseModal}
+                onPhoneLogin={handlePhoneLogin}
+                onEmailLogin={handleEmailLogin}
+            />
         </View>
     );
 };

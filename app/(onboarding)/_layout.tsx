@@ -17,6 +17,12 @@ export default function OnboardingLayout() {
         >
             <Stack.Screen name="welcome" />
             <Stack.Screen name="auth-choice" />
+            {/* Kayıt olma akışı ekranları */}
+            <Stack.Screen name="register-email" />
+            <Stack.Screen name="register-email-verification" />
+            <Stack.Screen name="register-phone" />
+            <Stack.Screen name="register-sms-verification" />
+            <Stack.Screen name="register-personal-info" />
         </Stack>
     );
 }

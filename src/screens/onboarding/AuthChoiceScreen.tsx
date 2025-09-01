@@ -33,7 +33,7 @@ export const AuthChoiceScreen: React.FC = () => {
     const handleRegister = () => {
         // Kayıt sayfasına yönlendir
         console.log('Kayıt ol');
-        // router.push('/(auth)/register'); // Henüz register sayfası yok
+        router.push('/(onboarding)/register-email');
     };
 
     const handleAppleLogin = () => {

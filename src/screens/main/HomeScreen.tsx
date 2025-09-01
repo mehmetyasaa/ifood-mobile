@@ -31,8 +31,8 @@ export const HomeScreen: React.FC = () => {
                 <View style={styles.headerTop}>
                     <View style={styles.locationContainer}>
                         <Ionicons name="location" size={20} color={COLORS.PRIMARY} />
-                        <Text style={styles.locationText}>Entregar em</Text>
-                        <Text style={styles.addressText}>Rua das Flores, 123</Text>
+                        <Text style={styles.locationText}>Teslimat adresi</Text>
+                        <Text style={styles.addressText}>Ana Mahalle, Sokak No: 123</Text>
                         <Ionicons name="chevron-down" size={16} color={COLORS.TEXT_SECONDARY} />
                     </View>
 
@@ -61,7 +61,7 @@ export const HomeScreen: React.FC = () => {
 
                 {/* Categories */}
                 <View style={styles.section}>
-                    <Text style={styles.sectionTitle}>Categorias</Text>
+                    <Text style={styles.sectionTitle}>Kategoriler</Text>
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}

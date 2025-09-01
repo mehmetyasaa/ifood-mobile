@@ -82,9 +82,19 @@ export const Button: React.FC<ButtonProps> = ({
                 />
             ) : (
                 <>
-                    {leftIcon && <>{leftIcon}</>}
+                    {leftIcon && (
+                        <>
+                            {leftIcon}
+                            <Text style={{ width: SPACING.XS }} />
+                        </>
+                    )}
                     <Text style={buttonTextStyle}>{title}</Text>
-                    {rightIcon && <>{rightIcon}</>}
+                    {rightIcon && (
+                        <>
+                            <Text style={{ width: SPACING.XS }} />
+                            {rightIcon}
+                        </>
+                    )}
                 </>
             )}
         </TouchableOpacity>

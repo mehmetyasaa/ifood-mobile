@@ -6,6 +6,7 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { COLORS } from '../src/constants/colors';
 import { useAppStore } from '../src/store/useAppStore';
 import { ErrorBoundary } from '../src/components/common/ErrorBoundary';
@@ -19,18 +20,20 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <ErrorBoundary>
-      <StatusBar style="auto" backgroundColor={COLORS.PRIMARY} />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: COLORS.BACKGROUND },
-        }}
-      >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="(onboarding)" />
-        <Stack.Screen name="(tabs)" />
-      </Stack>
-    </ErrorBoundary>
+    <SafeAreaProvider>
+      <ErrorBoundary>
+        <StatusBar style="auto" backgroundColor={COLORS.PRIMARY} />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: COLORS.BACKGROUND },
+          }}
+        >
+          <Stack.Screen name="index" />
+          <Stack.Screen name="(onboarding)" />
+          <Stack.Screen name="(tabs)" />
+        </Stack>
+      </ErrorBoundary>
+    </SafeAreaProvider>
   );
 }

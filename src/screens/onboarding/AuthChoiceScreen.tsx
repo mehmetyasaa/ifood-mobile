@@ -32,8 +32,10 @@ export const AuthChoiceScreen: React.FC = () => {
     };
 
     const handleRegister = () => {
-        // Modal'i aç (kayıt ve giriş aynı akış)
-        setShowLoginModal(false);
+        // Kayıt sayfasına yönlendir
+        console.log('Kayıt ol');
+        router.push('/(onboarding)/register-email');
+
     };
 
     const handleCloseModal = () => {
@@ -49,6 +51,7 @@ export const AuthChoiceScreen: React.FC = () => {
         setShowLoginModal(false);
         console.log('Email ile giriş yapılacak');
         // Gelecekte email giriş sayfası oluşturulabilir
+
     };
 
     const handleAppleLogin = () => {
